@@ -1,4 +1,7 @@
 const form = document.querySelector('form');
+const loadingElement = document.querySelector('.loader');
+
+loadingElement.style.display = 'none';
 
 form.addEventListener(`submit`, (event) => {
     event.preventDefault();
@@ -9,6 +12,12 @@ form.addEventListener(`submit`, (event) => {
     const user = {
         name,
             content
-    }
+    };
     console.log(user);
+
+    form.style.display = 'none'
+    loadingElement.style.display = '';
+
+
+
 });
