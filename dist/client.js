@@ -1,5 +1,7 @@
 const form = document.querySelector('form');
 const loadingElement = document.querySelector('.loader');
+const API_URL = 'http://localhost:5000/t0shi';
+
 
 loadingElement.style.display = 'none';
 
@@ -13,11 +15,17 @@ form.addEventListener(`submit`, (event) => {
         name,
             content
     };
-    console.log(user);
 
-    form.style.display = 'none'
+
+
+    form.style.display = 'none';
     loadingElement.style.display = '';
 
-
-
+    fetch(API_URL, {
+        method: 'POST',
+        body: JSON.stringify(user),
+        headers: {
+            'content-type': 'application/json'
+        }
+    });
 });
